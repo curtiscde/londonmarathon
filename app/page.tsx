@@ -9,15 +9,19 @@ export default function Home() {
       <main>
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-4">
-            <div className="grid col-span-9">
+            <div className="grid col-span-12 md:col-span-9">
               <div className="card bg-base-300 rounded-box place-items-center">
                 <div className="card-body items-center text-center">
                   <img src="/image.png" />
                 </div>
               </div>
             </div>
-            <div className="grid col-span-3">
+            <div className="grid col-span-12 md:col-span-3">
               <div className="card bg-base-300 rounded-box place-items-center">
+                <figure>
+                  <img
+                    src="https://placehold.co/600x400" />
+                </figure>
                 <div className="card-body items-center text-center">
 
 
@@ -46,22 +50,22 @@ export default function Home() {
               <div className="divider">Recent Donations</div>
             </div>
 
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <DonationCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <DonationCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <DonationCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <DonationCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <DonationCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <DonationCard />
             </div>
 
@@ -73,22 +77,22 @@ export default function Home() {
               <div className="divider">Recent Activities</div>
             </div>
 
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <ActivityCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <ActivityCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <ActivityCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <ActivityCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <ActivityCard />
             </div>
-            <div className="grid col-span-4">
+            <div className="grid col-span-12 md:col-span-4">
               <ActivityCard />
             </div>
 
