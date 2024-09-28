@@ -1,3 +1,4 @@
+import ActivityCard from "./components/ActivityCard";
 import DonationCard from "./components/DonationCard";
 import Header from "./components/Header"
 
@@ -63,12 +64,49 @@ export default function Home() {
             <div className="grid col-span-4">
               <DonationCard />
             </div>
+
+            <div className="grid col-span-12 place-items-center">
+              <button className="btn btn-wide">Load More Donations</button>
+            </div>
+
+            <div className="grid col-span-12">
+              <div className="divider">Recent Activities</div>
+            </div>
+
+            <div className="grid col-span-4">
+              <ActivityCard />
+            </div>
+            <div className="grid col-span-4">
+              <ActivityCard />
+            </div>
+            <div className="grid col-span-4">
+              <ActivityCard />
+            </div>
+            <div className="grid col-span-4">
+              <ActivityCard />
+            </div>
+            <div className="grid col-span-4">
+              <ActivityCard />
+            </div>
+            <div className="grid col-span-4">
+              <ActivityCard />
+            </div>
+
+            <div className="grid col-span-12 place-items-center">
+              <button className="btn btn-wide">Load More Activities</button>
+            </div>
+
+            <div className="grid col-span-12">
+              <div className="divider"></div>
+            </div>
+
+
           </div>
         </div>
       </main >
       <footer>
 
       </footer>
-    </div >
+    </div>
   );
 }
