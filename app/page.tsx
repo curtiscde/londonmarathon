@@ -13,8 +13,10 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-4">
 
             <div className="grid col-span-12">
-              <div className="card bg-base-300 rounded-box place-items-center">
-                <div className="card-body items-center">
+              <div className="card lg:card-side bg-base-300">
+                <figure><img
+                  src="https://placehold.co/600x400" /></figure>
+                <div className="card-body">
 
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus. Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt. Curabitur porta magna est, sed luctus magna pellentesque ac. Sed in nisi magna. Sed dapibus, sem pellentesque finibus sollicitudin, metus nulla sodales justo, sed gravida quam dolor quis justo. Integer vel porta lacus. Integer et sollicitudin velit.
@@ -33,10 +35,6 @@ export default function Home() {
             </div>
             <div className="grid col-span-12 md:col-span-3">
               <div className="card bg-base-300 rounded-box place-items-center">
-                <figure>
-                  <img
-                    src="https://placehold.co/600x400" />
-                </figure>
                 <div className="card-body items-center text-center">
 
 
