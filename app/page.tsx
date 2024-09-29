@@ -1,8 +1,13 @@
 import ActivityCard from "./components/ActivityCard";
 import DonationCard from "./components/DonationCard";
 import Header from "./components/Header"
+import { getAuthData } from "./getAuthData";
+import { getRecentActivities } from "./getRecentActivities";
 
-export default function Home() {
+export default async function Page() {
+  const oauth = await getAuthData(process.env.STRAVA_REFRESH_TOKEN as string)
+  const activities = await getRecentActivities(oauth.access_token)
+
   return (
     <div>
       <Header />
@@ -80,24 +85,11 @@ export default function Home() {
               <div className="divider">Recent Activities</div>
             </div>
 
-            <div className="grid col-span-12 md:col-span-4">
-              <ActivityCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <ActivityCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <ActivityCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <ActivityCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <ActivityCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <ActivityCard />
-            </div>
+            {activities.map(activity => (
+              <div key={activity.id} className="grid col-span-12 md:col-span-4">
+                <ActivityCard activity={activity} />
+              </div>
+            ))}
 
             <div className="grid col-span-12 place-items-center">
               <button className="btn btn-wide">Load More Activities</button>
