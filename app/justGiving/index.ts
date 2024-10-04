@@ -1,2 +1,2 @@
 export { JustGiving } from './JustGiving'
-export { JustGivingDonation } from './types/JustGivingDonation'
+export type { JustGivingDonation } from './types/JustGivingDonation'
