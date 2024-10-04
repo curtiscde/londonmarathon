@@ -1,11 +1,15 @@
 import ActivityCard from "./components/ActivityCard";
 import DonationCard from "./components/DonationCard";
 import Header from "./components/Header"
+import { JustGiving } from "./justGiving/JustGiving";
 import { Strava } from "./strava";
 
 export default async function Page() {
   await Strava.load(process.env.STRAVA_REFRESH_TOKEN as string)
   const { activities, profileUrl: stravaProfileUrl } = Strava
+
+  await JustGiving.load()
+  const { donations } = JustGiving
 
   return (
     <div>
@@ -56,24 +60,11 @@ export default async function Page() {
               <div className="divider">Recent Donations</div>
             </div>
 
-            <div className="grid col-span-12 md:col-span-4">
-              <DonationCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <DonationCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <DonationCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <DonationCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <DonationCard />
-            </div>
-            <div className="grid col-span-12 md:col-span-4">
-              <DonationCard />
-            </div>
+            {donations.map(donation => (
+              <div key={donation.id} className="grid col-span-12 md:col-span-4">
+                <DonationCard donation={donation} />
+              </div>
+            ))}
 
             <div className="grid col-span-12 place-items-center">
               <button className="btn btn-wide">Load More Donations</button>

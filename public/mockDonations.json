@@ -1,0 +1,28 @@
+{
+  "donations": [
+    {
+      "amount": "2.00",
+      "currencyCode": "GBP",
+      "donationDate": "\/Date(1728063456787+0000)\/",
+      "donationRef": null,
+      "donorDisplayName": "display-name",
+      "donorLocalAmount": "2.75",
+      "donorLocalCurrencyCode": "EUR",
+      "estimatedTaxReclaim": 0.56,
+      "id": 1,
+      "image": "",
+      "message": "message",
+      "source": "SponsorshipDonations",
+      "status": "Accepted",
+      "thirdPartyReference": "1234-my-sdi-ref"
+    }
+  ],
+  "pageShortName": "pageShortName",
+  "pagination": {
+    "nextPageCursor": "MzQ0MTQ5",
+    "pageSizeRequested": 50,
+    "pageSizeReturned": 50,
+    "totalPages": 2,
+    "totalResults": 0
+  }
+}
