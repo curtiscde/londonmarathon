@@ -13,9 +13,20 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
           className="mb-2 font-medium leading-tight text-surface/75 dark:text-neutral-300">
           {activity.date}
         </h6>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus. Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt. Curabitur porta magna est, sed luctus magna pellentesque ac. Sed in nisi magna. Sed dapibus, sem pellentesque finibus sollicitudin, metus nulla sodales justo, sed gravida quam dolor quis justo. Integer vel porta lacus. Integer et sollicitudin velit.
-        </p>
+
+        <div className="stats shadow w-full mb-8">
+          <div className="stat">
+            <div className="stat-title text-xs">Distance</div>
+            <div className="stat-value text-2xl">{activity.distanceFormatted}</div>
+          </div>
+
+          <div className="stat">
+            <div className="stat-title text-xs">Time</div>
+            <div className="stat-value text-2xl">{activity.movingTimeFormatted}</div>
+          </div>
+        </div>
+
+
         <div className="card-actions justify-end">
           <a className="btn btn-secondary" href={`https://www.strava.com/activities/${activity.id}`} target="_blank">More Info</a>
         </div>
