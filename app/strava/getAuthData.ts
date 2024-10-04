@@ -17,5 +17,5 @@ export async function getAuthData(refreshToken: string): Promise<IOAuthTokenResp
       refresh_token: refreshToken,
     }),
   })
-    .then((res: any) => res.json());
+    .then((res) => res.json());
 }

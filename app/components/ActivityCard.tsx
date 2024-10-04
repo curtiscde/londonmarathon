@@ -1,4 +1,4 @@
-import { StravaActivity } from "../stravaActivities";
+import { StravaActivity } from "../strava";
 
 interface ActivityCardProps {
   activity: StravaActivity

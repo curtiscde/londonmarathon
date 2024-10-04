@@ -8,7 +8,7 @@ export async function getRecentDonations(): Promise<JustGivingDonation[]> {
     const donationsJson = JSON.parse(readFileSync(`${process.cwd()}/app/justGiving/mockDonations.json`, 'utf8'));
 
     return donationsSchema.parse(donationsJson.donations)
-  } catch (e) {
+  } catch {
     throw new Error('getRecentDonations-error')
   }
 }

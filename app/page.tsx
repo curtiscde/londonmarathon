@@ -47,6 +47,7 @@ export default async function Page() {
 
                   <div
                     className="radial-progress bg-primary text-primary-content border-primary border-4"
+                    // @ts-expect-error ---value is used to state progress bar
                     style={{ "--value": 70 }}
                     role="progressbar">
                     70%
