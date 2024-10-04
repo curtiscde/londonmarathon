@@ -1,13 +1,10 @@
 import ActivityCard from "./components/ActivityCard";
 import DonationCard from "./components/DonationCard";
 import Header from "./components/Header"
-import { getAuthData } from "./getAuthData";
 import { Strava } from "./strava";
 
 export default async function Page() {
-  const oauth = await getAuthData(process.env.STRAVA_REFRESH_TOKEN as string)
-
-  await Strava.load(oauth.access_token)
+  await Strava.load(process.env.STRAVA_REFRESH_TOKEN as string)
   const { activities, profileUrl: stravaProfileUrl } = Strava
 
   return (
