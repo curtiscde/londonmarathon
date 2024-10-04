@@ -13,11 +13,27 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
           className="mb-2 font-medium leading-tight text-surface/75 dark:text-neutral-300">
           {activity.date}
         </h6>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus. Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt. Curabitur porta magna est, sed luctus magna pellentesque ac. Sed in nisi magna. Sed dapibus, sem pellentesque finibus sollicitudin, metus nulla sodales justo, sed gravida quam dolor quis justo. Integer vel porta lacus. Integer et sollicitudin velit.
-        </p>
+
+        <div className="stats shadow w-full mt-2 mb-4">
+          <div className="stat">
+            <div className="stat-title text-xs">Distance</div>
+            <div className="stat-value text-2xl">{activity.distanceFormatted}</div>
+          </div>
+
+          <div className="stat">
+            <div className="stat-title text-xs">Time</div>
+            <div className="stat-value text-2xl">{activity.movingTimeFormatted}</div>
+          </div>
+        </div>
+
+
         <div className="card-actions justify-end">
-          <a className="btn btn-secondary" href={`https://www.strava.com/activities/${activity.id}`} target="_blank">More Info</a>
+          <a className="btn btn-secondary" href={`https://www.strava.com/activities/${activity.id}`} target="_blank">
+            More Info
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>

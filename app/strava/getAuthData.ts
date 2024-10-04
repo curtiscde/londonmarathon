@@ -1,4 +1,4 @@
-import { IOAuthTokenResponse } from './IOAuthTokenResponse';
+import { IOAuthTokenResponse } from './types/IOAuthTokenResponse';
 
 // require('dotenv').config();
 

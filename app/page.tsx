@@ -1,20 +1,16 @@
 import ActivityCard from "./components/ActivityCard";
 import DonationCard from "./components/DonationCard";
 import Header from "./components/Header"
-import { getAuthData } from "./getAuthData";
-import { StravaActivities } from "./stravaActivities/StravaActivities";
+import { Strava } from "./strava";
 
 export default async function Page() {
-  const oauth = await getAuthData(process.env.STRAVA_REFRESH_TOKEN as string)
-
-  await StravaActivities.loadActivities(oauth.access_token)
-  const { activities } = StravaActivities
+  await Strava.load(process.env.STRAVA_REFRESH_TOKEN as string)
+  const { activities, profileUrl: stravaProfileUrl } = Strava
 
   return (
     <div>
       <Header />
       <main>
-
 
         <div className="container mx-auto">
           <div className="grid grid-cols-12 gap-4">
@@ -94,7 +90,12 @@ export default async function Page() {
             ))}
 
             <div className="grid col-span-12 place-items-center">
-              <button className="btn btn-wide">Load More Activities</button>
+              <a className="btn btn-wide" target="_blank" href={stravaProfileUrl}>
+                See More Activities
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </a>
             </div>
 
             <div className="grid col-span-12">
@@ -118,8 +119,8 @@ export default async function Page() {
                   <a className="link link-hover">Baz</a>
                 </nav>
                 <nav>
-                  <h6 className="footer-title">Baz</h6>
-                  <a className="link link-hover" target="_blank" href="https://www.tcslondonmarathon.com">TCS London Marathon</a>
+                  <h6 className="footer-title">Social</h6>
+                  <a className="link link-hover" target="_blank" href={stravaProfileUrl}>Strava</a>
                   <a className="link link-hover">Foo</a>
                   <a className="link link-hover">Bar</a>
                 </nav>
