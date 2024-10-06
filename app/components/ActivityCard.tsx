@@ -4,7 +4,6 @@ import dayjs from 'dayjs'
 import calendar from 'dayjs/plugin/calendar'
 import { StravaActivity } from "../strava";
 
-
 dayjs.extend(calendar);
 
 interface ActivityCardProps {
