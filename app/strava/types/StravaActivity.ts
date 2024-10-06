@@ -1,10 +1,8 @@
 import dayjs from 'dayjs'
 import calendar from 'dayjs/plugin/calendar'
-import duration from 'dayjs/plugin/duration'
 import { z } from 'zod'
 
 dayjs.extend(calendar);
-dayjs.extend(duration);
 
 const formatDistance = (distance: number) => `${Math.round((distance / 1000) * 10) / 10}k`
 
@@ -37,9 +35,10 @@ export const stravaActivitySchema = z
       movingTime: activity.moving_time,
       movingTimeFormatted: convertSecondsToHHMMSS(activity.moving_time),
       name: activity.name,
-      date: dayjs(activity.start_date).calendar(null, {
-        sameElse: "DD/MM/YYYY [at] h:mm A",
-      })
+      // date: dayjs(activity.start_date).calendar(null, {
+      //   sameElse: "DD/MM/YYYY [at] h:mm A"
+      // })
+      date: activity.start_date
     }
   })
 
