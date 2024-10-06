@@ -1,4 +1,11 @@
+'use client'
+
+import dayjs from 'dayjs'
+import calendar from 'dayjs/plugin/calendar'
 import { StravaActivity } from "../strava";
+
+
+dayjs.extend(calendar);
 
 interface ActivityCardProps {
   activity: StravaActivity
@@ -11,7 +18,9 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
         <h2 className="card-title">{activity.name}</h2>
         <h6
           className="mb-2 font-medium leading-tight text-surface/75 dark:text-neutral-300">
-          {activity.date}
+          {dayjs(activity.date).calendar(null, {
+            sameElse: "DD/MM/YYYY [at] h:mm A"
+          })}
         </h6>
 
         <div className="stats shadow w-full mt-2 mb-4">
