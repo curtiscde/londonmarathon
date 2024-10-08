@@ -1,6 +1,7 @@
 import ActivityCard from "./components/ActivityCard";
 import DonationCard from "./components/DonationCard";
 import Header from "./components/Header"
+import Map from "./components/Map"
 import { JustGiving } from "./justGiving/JustGiving";
 import { Strava } from "./strava";
 
@@ -35,8 +36,8 @@ export default async function Page() {
 
             <div className="grid col-span-12 md:col-span-9">
               <div className="card bg-base-300 rounded-box place-items-center">
-                <div className="card-body items-center text-center">
-                  <img src="/image.png" />
+                <div className="card-body items-center text-center w-full">
+                  <Map />
                 </div>
               </div>
             </div>
