@@ -2,15 +2,19 @@ import ActivityCard from "./components/ActivityCard";
 import DonationCard from "./components/DonationCard";
 import Header from "./components/Header"
 import Map from "./components/Map"
+import { DonationsMap } from "./donationsMap";
 import { JustGiving } from "./justGiving/JustGiving";
 import { Strava } from "./strava";
 
 export default async function Page() {
-  await Strava.load(process.env.STRAVA_REFRESH_TOKEN as string)
-  const { activities, profileUrl: stravaProfileUrl } = Strava
+  await DonationsMap.getRouteCoords()
+  const { routeCoords } = DonationsMap
 
   await JustGiving.load()
   const { donations } = JustGiving
+
+  await Strava.load(process.env.STRAVA_REFRESH_TOKEN as string)
+  const { activities, profileUrl: stravaProfileUrl } = Strava
 
   return (
     <div>
@@ -37,7 +41,7 @@ export default async function Page() {
             <div className="grid col-span-12">
               <div className="card bg-base-300 rounded-box place-items-center">
                 <div className="card-body items-center text-center w-full">
-                  <Map />
+                  <Map routeCoords={routeCoords} />
                 </div>
               </div>
             </div>

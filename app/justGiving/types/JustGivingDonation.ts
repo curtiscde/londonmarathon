@@ -9,11 +9,14 @@ export const justGivingDonationSchema = z
     message: z.string(),
   })
   .transform((donation) => {
+    const date = new Date(Number(donation.donationDate.match(/Date\((\d+)\+\d+\)/)![1]))
     return {
-      amount: donation.amount,
+      amount: Number(donation.amount),
       id: donation.id,
+      displayAmount: donation.amount,
       donorDisplayName: donation.donorDisplayName,
-      donationDate: new Date(Number(donation.donationDate.match(/Date\((\d+)\+\d+\)/)![1])).toUTCString(),
+      donationDate: date.toUTCString(),
+      donationDateTimestamp: date.getTime(),
       message: donation.message
     }
   })
