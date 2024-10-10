@@ -34,17 +34,17 @@ export default async function Page() {
               </div>
             </div>
 
-            <div className="grid col-span-12 md:col-span-9">
+            <div className="grid col-span-12">
               <div className="card bg-base-300 rounded-box place-items-center">
                 <div className="card-body items-center text-center w-full">
                   <Map />
                 </div>
               </div>
             </div>
-            <div className="grid col-span-12 md:col-span-3">
-              <div className="card bg-base-300 rounded-box place-items-center">
-                <div className="card-body items-center text-center">
 
+            <div className="grid col-span-12 md:col-span-6">
+              <div className="card bg-base-300 rounded-box">
+                <div className="card-body">
 
                   <div
                     className="radial-progress bg-primary text-primary-content border-primary border-4"
@@ -53,6 +53,17 @@ export default async function Page() {
                     role="progressbar">
                     70%
                   </div>
+
+                </div>
+              </div>
+            </div>
+            <div className="grid col-span-12 md:col-span-6">
+              <div className="card bg-base-300 rounded-box">
+                <div className="card-body">
+
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus. Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt. Curabitur porta magna est, sed luctus magna pellentesque ac. Sed in nisi magna.
+                  </p>
 
                 </div>
               </div>
