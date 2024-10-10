@@ -22,7 +22,7 @@ export default function DonationCard({ donation }: DonationCardProps) {
         <div className="stats shadow w-full mt-2 mb-4">
           <div className="stat">
             <div className="stat-title">Donation</div>
-            <div className="stat-value">&pound;{donation.amount}</div>
+            <div className="stat-value">&pound;{donation.displayAmount}</div>
           </div>
         </div>
         <blockquote>

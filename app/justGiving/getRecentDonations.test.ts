@@ -11,7 +11,8 @@ describe('getRecentDonations.ts', () => {
   it('returns donations', () => {
     expect(donations).toEqual([
       {
-        amount: "2.00",
+        amount: 2,
+        displayAmount: '2.00',
         donationDate: "Fri, 04 Oct 2024 17:37:36 GMT",
         donationDateTimestamp: 1728063456787,
         donorDisplayName: "display-name",
@@ -19,7 +20,8 @@ describe('getRecentDonations.ts', () => {
         message: "message"
       },
       {
-        amount: "2.00",
+        amount: 2,
+        displayAmount: '2.00',
         donationDate: "Fri, 04 Oct 2024 17:37:36 GMT",
         donationDateTimestamp: 1728063456787,
         donorDisplayName: "display-name",
@@ -27,7 +29,8 @@ describe('getRecentDonations.ts', () => {
         message: "message"
       },
       {
-        amount: "2.00",
+        amount: 2,
+        displayAmount: '2.00',
         donationDate: "Fri, 04 Oct 2024 17:37:36 GMT",
         donationDateTimestamp: 1728063456787,
         donorDisplayName: "display-name",
@@ -35,7 +38,8 @@ describe('getRecentDonations.ts', () => {
         message: "message"
       },
       {
-        amount: "2.00",
+        amount: 2,
+        displayAmount: '2.00',
         donationDate: "Fri, 04 Oct 2024 17:37:36 GMT",
         donationDateTimestamp: 1728063456787,
         donorDisplayName: "display-name",
@@ -43,7 +47,8 @@ describe('getRecentDonations.ts', () => {
         message: "message"
       },
       {
-        amount: "2.00",
+        amount: 2,
+        displayAmount: '2.00',
         donationDate: "Fri, 04 Oct 2024 17:37:36 GMT",
         donationDateTimestamp: 1728063456787,
         donorDisplayName: "display-name",
@@ -51,7 +56,8 @@ describe('getRecentDonations.ts', () => {
         message: "message"
       },
       {
-        amount: "2.00",
+        amount: 2,
+        displayAmount: '2.00',
         donationDate: "Fri, 04 Oct 2024 17:37:36 GMT",
         donationDateTimestamp: 1728063456787,
         donorDisplayName: "display-name",
