@@ -1,0 +1,1 @@
+export { DonationsMap } from './DonationsMap'
