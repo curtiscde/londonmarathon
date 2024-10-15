@@ -1,4 +1,5 @@
 import DonationCard from "./components/DonationCard";
+import Footer from "./components/Footer";
 import Header from "./components/Header"
 import Map from "./components/Map"
 import RecentActivities from "./components/RecentActivities";
@@ -115,27 +116,7 @@ export default async function Page() {
             <RecentActivities stravaActivities={stravaActivities!} stravaProfileUrl={stravaProfileUrl!} />
 
             <div className="grid col-span-12">
-              <footer className="footer bg-neutral text-neutral-content p-10">
-                <nav>
-                  <h6 className="footer-title">Foo</h6>
-                  <a className="link link-hover" target="_blank" href="https://www.tcslondonmarathon.com">TCS London Marathon</a>
-                  <a className="link link-hover">Foo</a>
-                  <a className="link link-hover">Bar</a>
-                  <a className="link link-hover">Baz</a>
-                </nav>
-                <nav>
-                  <h6 className="footer-title">Bar</h6>
-                  <a className="link link-hover" target="_blank" href="https://www.tcslondonmarathon.com">TCS London Marathon</a>
-                  <a className="link link-hover">Foo</a>
-                  <a className="link link-hover">Bar</a>
-                  <a className="link link-hover">Baz</a>
-                </nav>
-                <nav>
-                  <h6 className="footer-title">Social</h6>
-                  <a className="link link-hover">Foo</a>
-                  <a className="link link-hover">Bar</a>
-                </nav>
-              </footer>
+              <Footer />
             </div>
 
           </div>
