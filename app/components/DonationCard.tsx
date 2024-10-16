@@ -21,20 +21,20 @@ export default function DonationCard({ donation }: DonationCardProps) {
         </h6>
         <div className="stats shadow w-full mt-2 mb-4">
           <div className="stat">
-            <div className="stat-title">Donation Amount</div>
-            <div className="stat-value">&pound;{donation.displayAmount}</div>
+            <div className="stat-title">Donation</div>
+            <div className="stat-value text-2xl">&pound;{donation.displayAmount}</div>
           </div>
           {
             donation.donationMap != null &&
             <div className="stat">
-              <div className="stat-title">Donation Distance</div>
-              <div className="stat-value">{donation.donationMap.donationDistanceDisplay}</div>
+              <div className="stat-title">Distance</div>
+              <div className="stat-value text-2xl">{donation.donationMap.donationDistanceDisplay}</div>
             </div>
           }
         </div>
         <blockquote>
           <p>
-            &quot;{donation.message}&quot;
+            &ldquo;{donation.message}&rdquo;
           </p>
         </blockquote>
       </div>

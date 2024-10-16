@@ -21,12 +21,9 @@ export default async function Page() {
   let stravaProfileUrl: string
 
   if (process.env.STRAVA_REFRESH_TOKEN != null && typeof process.env.STRAVA_REFRESH_TOKEN === 'string') {
-    await Strava.load(process.env.STRAVA_REFRESH_TOKEN)
+    await Strava.load(process.env.STRAVA_REFRESH_TOKEN);
 
-    const { activities, profileUrl } = Strava
-
-    stravaActivities = activities
-    stravaProfileUrl = profileUrl
+    ({ activities: stravaActivities, profileUrl: stravaProfileUrl } = Strava)
   }
 
   return (
