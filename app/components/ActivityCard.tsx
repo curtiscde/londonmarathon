@@ -24,12 +24,12 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
 
         <div className="stats shadow w-full mt-2 mb-4">
           <div className="stat">
-            <div className="stat-title text-xs">Distance</div>
+            <div className="stat-title">Distance</div>
             <div className="stat-value text-2xl">{activity.distanceFormatted}</div>
           </div>
 
           <div className="stat">
-            <div className="stat-title text-xs">Time</div>
+            <div className="stat-title">Time</div>
             <div className="stat-value text-2xl">{activity.movingTimeFormatted}</div>
           </div>
         </div>
