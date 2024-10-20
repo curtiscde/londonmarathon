@@ -1,29 +1,30 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header"
-import Map from "./components/Map"
-import RecentActivities from "./components/RecentActivities";
-import RecentDonations from "./components/RecentDonations";
-import { DonationsMap } from "./donationsMap";
-import { Fundraising } from "./fundraising";
-import { Strava, StravaActivity } from "./strava";
+import React from 'react';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Map from './components/Map';
+import RecentActivities from './components/RecentActivities';
+import RecentDonations from './components/RecentDonations';
+import { DonationsMap } from './donationsMap';
+import { Fundraising } from './fundraising';
+import { Strava, StravaActivity } from './strava';
 
 export default async function Page() {
-  await DonationsMap.getRouteCoords()
-  const { routeCoords, totalRouteDistance } = DonationsMap
+  await DonationsMap.getRouteCoords();
+  const { routeCoords, totalRouteDistance } = DonationsMap;
 
-  await Fundraising.loadDonations()
+  await Fundraising.loadDonations();
 
-  Fundraising.bindDonationMaps({ routeCoords, totalRouteDistance })
+  Fundraising.bindDonationMaps({ routeCoords, totalRouteDistance });
 
-  const { fundraisingInfo, donations } = Fundraising
+  const { fundraisingInfo, donations } = Fundraising;
 
-  let stravaActivities: StravaActivity[]
-  let stravaProfileUrl: string
+  let stravaActivities: StravaActivity[];
+  let stravaProfileUrl: string;
 
   if (process.env.STRAVA_REFRESH_TOKEN != null && typeof process.env.STRAVA_REFRESH_TOKEN === 'string') {
     await Strava.load(process.env.STRAVA_REFRESH_TOKEN);
 
-    ({ activities: stravaActivities, profileUrl: stravaProfileUrl } = Strava)
+    ({ activities: stravaActivities, profileUrl: stravaProfileUrl } = Strava);
   }
 
   return (
@@ -64,18 +65,28 @@ export default async function Page() {
                     <div
                       className="radial-progress bg-primary text-primary-content border-primary border-4"
                       // @ts-expect-error ---value is used to state progress bar
-                      style={{ "--value": fundraisingInfo.totalRaisedPercentageOfFundraisingTarget }}
-                      role="progressbar">
-                      {fundraisingInfo.totalRaisedPercentageOfFundraisingTarget}%
+                      style={{ '--value': fundraisingInfo.totalRaisedPercentageOfFundraisingTarget }}
+                      role="progressbar"
+                    >
+                      {fundraisingInfo.totalRaisedPercentageOfFundraisingTarget}
+                      %
                     </div>
 
-                    <div className="divider divider-horizontal"></div>
+                    <div className="divider divider-horizontal" />
 
                     <div className="stats shadow">
                       <div className="stat">
                         <div className="stat-title">Total Raised</div>
-                        <div className="stat-value">£{fundraisingInfo.totalRaised}</div>
-                        <div className="stat-desc">of £{fundraisingInfo.fundraisingTarget} target</div>
+                        <div className="stat-value">
+                          £
+                          {fundraisingInfo.totalRaised}
+                        </div>
+                        <div className="stat-desc">
+                          of £
+                          {fundraisingInfo.fundraisingTarget}
+                          {' '}
+                          target
+                        </div>
                       </div>
                     </div>
 
@@ -105,10 +116,8 @@ export default async function Page() {
 
           </div>
         </div>
-      </main >
-      <footer>
-
-      </footer>
+      </main>
+      <footer />
     </div>
   );
 }

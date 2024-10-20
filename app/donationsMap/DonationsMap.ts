@@ -1,16 +1,16 @@
-import { RouteCoord } from "../types/RouteCoord";
-import { getTotalDistance } from "./getTotalDistance";
-import { coords } from "./lmCoords.json"
-import { parseCoords } from "./parseCoords";
+import { RouteCoord } from '../types/RouteCoord';
+import { getTotalDistance } from './getTotalDistance';
+import { coords } from './lmCoords.json';
+import { parseCoords } from './parseCoords';
 
 export class DonationsMap {
-  public static routeCoords: RouteCoord[]
+  public static routeCoords: RouteCoord[];
 
   public static getRouteCoords() {
-    this.routeCoords = parseCoords(coords)
+    this.routeCoords = parseCoords(coords);
   }
 
   public static get totalRouteDistance() {
-    return getTotalDistance(this.routeCoords)
+    return getTotalDistance(this.routeCoords);
   }
 }

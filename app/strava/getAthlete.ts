@@ -1,4 +1,4 @@
-import { StravaAthlete, stravaAthleteSchema } from "./types/StravaAthlete";
+import { StravaAthlete, stravaAthleteSchema } from './types/StravaAthlete';
 
 export async function getAthlete(accessToken: string): Promise<StravaAthlete> {
   try {
@@ -8,13 +8,12 @@ export async function getAthlete(accessToken: string): Promise<StravaAthlete> {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`
-      }
+        Authorization: `Bearer ${accessToken}`,
+      },
     })
-      .then((res) => res.json())
-    return stravaAthleteSchema.parse(apiResponse)
+      .then((res) => res.json());
+    return stravaAthleteSchema.parse(apiResponse);
   } catch (e) {
-    console.log(e)
-    throw new Error('getAthlete-error')
+    throw new Error('getAthlete-error');
   }
 }

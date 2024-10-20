@@ -1,7 +1,7 @@
-import { JustGiving } from "../justGiving";
-import { RouteCoord } from "../types/RouteCoord";
-import { generateDonationMaps } from "./generateDonationMaps";
-import { Donation } from "./types/Donation";
+import { JustGiving } from '../justGiving';
+import { RouteCoord } from '../types/RouteCoord';
+import { generateDonationMaps } from './generateDonationMaps';
+import { Donation } from './types/Donation';
 
 interface FundraisingInfo {
   fundraisingTarget: number
@@ -10,28 +10,29 @@ interface FundraisingInfo {
 }
 
 export class Fundraising {
-  public static donations: Donation[]
-  public static fundraisingInfo: FundraisingInfo
+  public static donations: Donation[];
+
+  public static fundraisingInfo: FundraisingInfo;
 
   static async loadDonations() {
-    await JustGiving.load()
+    await JustGiving.load();
 
     const {
       donations,
       fundraisingPage: {
         fundraisingTarget,
         totalRaised,
-        totalRaisedPercentageOfFundraisingTarget
-      }
-    } = JustGiving
+        totalRaisedPercentageOfFundraisingTarget,
+      },
+    } = JustGiving;
 
-    this.donations = donations.sort((a, b) => a.donationDateTimestamp < b.donationDateTimestamp ? -1 : 1)
+    this.donations = donations.sort((a, b) => (a.donationDateTimestamp < b.donationDateTimestamp ? -1 : 1));
 
     this.fundraisingInfo = {
       fundraisingTarget,
       totalRaised,
-      totalRaisedPercentageOfFundraisingTarget
-    }
+      totalRaisedPercentageOfFundraisingTarget,
+    };
   }
 
   static bindDonationMaps({ routeCoords, totalRouteDistance }: { routeCoords: RouteCoord[], totalRouteDistance: number }) {
@@ -39,7 +40,7 @@ export class Fundraising {
       donations: this.donations,
       fundraisingTarget: this.fundraisingInfo.fundraisingTarget,
       totalRouteDistance,
-      routeCoords
-    })
+      routeCoords,
+    });
   }
 }
