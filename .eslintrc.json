@@ -12,5 +12,8 @@
     "ecmaVersion": 13,
     "sourceType": "module",
     "project": "tsconfig.json"
+  },
+  "rules": {
+    "import/prefer-default-export": "off"
   }
 }

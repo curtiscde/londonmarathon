@@ -1,1 +1,1 @@
-export { Fundraising } from './Fundraising'
+export { Fundraising } from './Fundraising';

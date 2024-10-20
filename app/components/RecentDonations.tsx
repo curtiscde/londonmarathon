@@ -1,8 +1,8 @@
-import { Donation } from "../fundraising/types/Donation"
-import DonationCard from "./DonationCard"
+import React from 'react';
+import { Donation } from '../fundraising/types/Donation';
+import DonationCard from './DonationCard';
 
-const sortDonations = (donations: Donation[]) =>
-  donations.sort((a, b) => a.donationDateTimestamp < b.donationDateTimestamp ? 1 : -1)
+const sortDonations = (donations: Donation[]) => donations.sort((a, b) => (a.donationDateTimestamp < b.donationDateTimestamp ? 1 : -1));
 
 export default function RecentDonations({ donations }: { donations: Donation[] }) {
   return (
@@ -11,7 +11,7 @@ export default function RecentDonations({ donations }: { donations: Donation[] }
         <div className="divider">Recent Donations</div>
       </div>
 
-      {sortDonations(donations).map(donation => (
+      {sortDonations(donations).map((donation) => (
         <div key={donation.id} className="grid col-span-12 md:col-span-4">
           <DonationCard donation={donation} />
         </div>
@@ -21,5 +21,5 @@ export default function RecentDonations({ donations }: { donations: Donation[] }
         <button className="btn btn-wide">Load More Donations</button>
       </div>
     </>
-  )
+  );
 }

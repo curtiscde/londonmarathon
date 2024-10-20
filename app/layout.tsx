@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import React from 'react';
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "London Marathon 2025",
-  description: "Fundraising for the London Marathon 2025",
+  title: 'London Marathon 2025',
+  description: 'Fundraising for the London Marathon 2025',
 };
 
 export default function RootLayout({

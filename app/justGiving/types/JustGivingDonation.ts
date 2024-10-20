@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const justGivingDonationSchema = z
   .object({
@@ -9,7 +9,7 @@ export const justGivingDonationSchema = z
     message: z.string(),
   })
   .transform((donation) => {
-    const date = new Date(Number(donation.donationDate.match(/Date\((\d+)\+\d+\)/)![1]))
+    const date = new Date(Number(donation.donationDate.match(/Date\((\d+)\+\d+\)/)![1]));
     return {
       amount: Number(donation.amount),
       id: donation.id,
@@ -17,8 +17,8 @@ export const justGivingDonationSchema = z
       donorDisplayName: donation.donorDisplayName,
       donationDate: date.toUTCString(),
       donationDateTimestamp: date.getTime(),
-      message: donation.message
-    }
-  })
+      message: donation.message,
+    };
+  });
 
-export type JustGivingDonation = z.infer<typeof justGivingDonationSchema>
+export type JustGivingDonation = z.infer<typeof justGivingDonationSchema>;

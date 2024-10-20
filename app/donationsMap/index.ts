@@ -1,1 +1,1 @@
-export { DonationsMap } from './DonationsMap'
+export { DonationsMap } from './DonationsMap';
