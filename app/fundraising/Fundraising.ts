@@ -25,7 +25,7 @@ export class Fundraising {
       }
     } = JustGiving
 
-    this.donations = donations.sort((a, b) => a.donationDateTimestamp < b.donationDateTimestamp ? 1 : -1)
+    this.donations = donations.sort((a, b) => a.donationDateTimestamp < b.donationDateTimestamp ? -1 : 1)
 
     this.fundraisingInfo = {
       fundraisingTarget,

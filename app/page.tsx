@@ -1,8 +1,8 @@
-import DonationCard from "./components/DonationCard";
 import Footer from "./components/Footer";
 import Header from "./components/Header"
 import Map from "./components/Map"
 import RecentActivities from "./components/RecentActivities";
+import RecentDonations from "./components/RecentDonations";
 import { DonationsMap } from "./donationsMap";
 import { Fundraising } from "./fundraising";
 import { Strava, StravaActivity } from "./strava";
@@ -96,20 +96,7 @@ export default async function Page() {
               </div>
             </div>
 
-            <div className="grid col-span-12">
-              <div className="divider">Recent Donations</div>
-            </div>
-
-            {donations.map(donation => (
-              <div key={donation.id} className="grid col-span-12 md:col-span-4">
-                <DonationCard donation={donation} />
-              </div>
-            ))}
-
-            <div className="grid col-span-12 place-items-center">
-              <button className="btn btn-wide">Load More Donations</button>
-            </div>
-
+            <RecentDonations donations={donations} />
             <RecentActivities stravaActivities={stravaActivities!} stravaProfileUrl={stravaProfileUrl!} />
 
             <div className="grid col-span-12">
