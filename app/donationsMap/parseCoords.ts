@@ -12,4 +12,5 @@ const coordsSchemaWithTransform = coordsSchema.transform((coords) => coords.map(
   lon: Number(lon),
 })));
 
-export const parseCoords = (coords: z.infer<typeof coordsSchema>) => coordsSchemaWithTransform.parse(coords);
+export const parseCoords = (coords: z.infer<typeof coordsSchema>) => coordsSchemaWithTransform
+  .parse(coords);

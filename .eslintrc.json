@@ -6,11 +6,6 @@
     "airbnb-typescript"
   ],
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 13,
-    "sourceType": "module",
     "project": "tsconfig.json"
   },
   "rules": {
