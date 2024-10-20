@@ -2,7 +2,7 @@ import { RouteCoord } from '../types/RouteCoord';
 
 export function getDistanceBetweenCoords(
   { lat: lat1, lon: lon1 }: RouteCoord,
-  { lat: lat2, lon: lon2 }: RouteCoord
+  { lat: lat2, lon: lon2 }: RouteCoord,
 ) {
   const toRadians = (degrees: number) => degrees * (Math.PI / 180);
   const R = 6371; // Radius of the Earth in kilometers

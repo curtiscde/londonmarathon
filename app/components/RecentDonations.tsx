@@ -2,7 +2,8 @@ import React from 'react';
 import { Donation } from '../fundraising/types/Donation';
 import DonationCard from './DonationCard';
 
-const sortDonations = (donations: Donation[]) => donations.sort((a, b) => (a.donationDateTimestamp < b.donationDateTimestamp ? 1 : -1));
+const sortDonations = (donations: Donation[]) => donations
+  .sort((a, b) => (a.donationDateTimestamp < b.donationDateTimestamp ? 1 : -1));
 
 export default function RecentDonations({ donations }: { donations: Donation[] }) {
   return (
@@ -18,7 +19,7 @@ export default function RecentDonations({ donations }: { donations: Donation[] }
       ))}
 
       <div className="grid col-span-12 place-items-center">
-        <button className="btn btn-wide">Load More Donations</button>
+        <button type="button" className="btn btn-wide">Load More Donations</button>
       </div>
     </>
   );

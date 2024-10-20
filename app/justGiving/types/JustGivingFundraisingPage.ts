@@ -11,7 +11,7 @@ export const justGivingFundraisingPageSchema = z
     fundraisingTarget,
     grandTotalRaisedExcludingGiftAid,
     totalEstimatedGiftAid,
-    totalRaisedPercentageOfFundraisingTarget
+    totalRaisedPercentageOfFundraisingTarget,
   }) => ({
     fundraisingTarget: Number(fundraisingTarget),
     totalRaised: Number(grandTotalRaisedExcludingGiftAid) + Number(totalEstimatedGiftAid),

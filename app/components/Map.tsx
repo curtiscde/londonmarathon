@@ -45,7 +45,11 @@ export default function Map({ routeCoords, donations }: MapProps) {
             const colour = colours[donationIndex % colours.length];
 
             return (
-              <Polyline key={donation.id} pathOptions={{ color: colour, weight: 4 }} positions={donation.donationMap?.coords.map(({ lat, lon }) => [lat, lon])}>
+              <Polyline
+                key={donation.id}
+                pathOptions={{ color: colour, weight: 4 }}
+                positions={donation.donationMap?.coords.map(({ lat, lon }) => [lat, lon])}
+              >
                 <Popup>
                   <h4><strong>{donation.donorDisplayName}</strong></h4>
                   <p>

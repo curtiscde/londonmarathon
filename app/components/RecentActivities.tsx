@@ -4,7 +4,14 @@ import React from 'react';
 import { StravaActivity } from '../strava';
 import ActivityCard from './ActivityCard';
 
-export default function RecentActivities({ stravaActivities, stravaProfileUrl }: { stravaActivities: StravaActivity[], stravaProfileUrl: string }) {
+interface RecentActivitiesProps {
+  stravaActivities: StravaActivity[]
+  stravaProfileUrl: string
+}
+
+export default function RecentActivities(
+  { stravaActivities, stravaProfileUrl }: RecentActivitiesProps,
+) {
   if (stravaActivities == null || stravaProfileUrl == null) {
     return null;
   }
