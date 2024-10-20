@@ -7,10 +7,15 @@ export const justGivingFundraisingPageSchema = z
     totalEstimatedGiftAid: z.string(),
     totalRaisedPercentageOfFundraisingTarget: z.string(),
   })
-  .transform((fundraisingPage) => ({
-    fundraisingTarget: Number(fundraisingPage.fundraisingTarget),
-    totalRaised: Number(fundraisingPage.grandTotalRaisedExcludingGiftAid) + Number(fundraisingPage.totalEstimatedGiftAid),
-    totalRaisedPercentageOfFundraisingTarget: fundraisingPage.totalRaisedPercentageOfFundraisingTarget,
+  .transform(({
+    fundraisingTarget,
+    grandTotalRaisedExcludingGiftAid,
+    totalEstimatedGiftAid,
+    totalRaisedPercentageOfFundraisingTarget
+  }) => ({
+    fundraisingTarget: Number(fundraisingTarget),
+    totalRaised: Number(grandTotalRaisedExcludingGiftAid) + Number(totalEstimatedGiftAid),
+    totalRaisedPercentageOfFundraisingTarget,
   }));
 
 export type JustGivingFundraisingPage = z.infer<typeof justGivingFundraisingPageSchema>;

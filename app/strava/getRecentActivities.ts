@@ -16,7 +16,6 @@ export async function getRecentActivities(accessToken: string): Promise<StravaAc
       .then((res) => res.json());
     return activitiesSchema.parse(apiResponse);
   } catch (e) {
-    console.log(e);
     throw new Error('getRecentActivities-error');
   }
 }

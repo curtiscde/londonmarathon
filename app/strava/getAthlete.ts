@@ -14,7 +14,6 @@ export async function getAthlete(accessToken: string): Promise<StravaAthlete> {
       .then((res) => res.json());
     return stravaAthleteSchema.parse(apiResponse);
   } catch (e) {
-    console.log(e);
     throw new Error('getAthlete-error');
   }
 }
