@@ -1,4 +1,4 @@
-import { RouteCoord } from "@/app/types/RouteCoord"
+import { RouteCoord } from '@/app/types/RouteCoord';
 
 interface DonationMap {
   coords: RouteCoord[]

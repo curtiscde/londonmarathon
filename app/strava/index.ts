@@ -1,2 +1,2 @@
-export { Strava } from './Strava'
-export type { StravaActivity } from './types/StravaActivity'
+export { Strava } from './Strava';
+export type { StravaActivity } from './types/StravaActivity';

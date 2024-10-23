@@ -1,18 +1,21 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 export const justGivingFundraisingPageSchema = z
   .object({
     fundraisingTarget: z.string(),
     grandTotalRaisedExcludingGiftAid: z.string(),
     totalEstimatedGiftAid: z.string(),
-    totalRaisedPercentageOfFundraisingTarget: z.string()
+    totalRaisedPercentageOfFundraisingTarget: z.string(),
   })
-  .transform((fundraisingPage) => {
-    return {
-      fundraisingTarget: Number(fundraisingPage.fundraisingTarget),
-      totalRaised: Number(fundraisingPage.grandTotalRaisedExcludingGiftAid) + Number(fundraisingPage.totalEstimatedGiftAid),
-      totalRaisedPercentageOfFundraisingTarget: fundraisingPage.totalRaisedPercentageOfFundraisingTarget
-    }
-  })
+  .transform(({
+    fundraisingTarget,
+    grandTotalRaisedExcludingGiftAid,
+    totalEstimatedGiftAid,
+    totalRaisedPercentageOfFundraisingTarget,
+  }) => ({
+    fundraisingTarget: Number(fundraisingTarget),
+    totalRaised: Number(grandTotalRaisedExcludingGiftAid) + Number(totalEstimatedGiftAid),
+    totalRaisedPercentageOfFundraisingTarget,
+  }));
 
-export type JustGivingFundraisingPage = z.infer<typeof justGivingFundraisingPageSchema>
+export type JustGivingFundraisingPage = z.infer<typeof justGivingFundraisingPageSchema>;

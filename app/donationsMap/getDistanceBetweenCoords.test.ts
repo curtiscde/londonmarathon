@@ -1,4 +1,4 @@
-import { getDistanceBetweenCoords } from "./getDistanceBetweenCoords"
+import { getDistanceBetweenCoords } from './getDistanceBetweenCoords';
 
 describe('getDistanceBetweenCoords', () => {
   it('returns distance', () => {
@@ -6,13 +6,13 @@ describe('getDistanceBetweenCoords', () => {
       getDistanceBetweenCoords(
         {
           lat: 51.473090000000006,
-          lon: 0.011580000000000002
+          lon: 0.011580000000000002,
         },
         {
-          "lat": 51.47325002033894,
-          "lon": 0.01284248675690911
+          lat: 51.47325002033894,
+          lon: 0.01284248675690911,
         },
-      )
-    ).toEqual(0.08923339479248181)
-  })
-})
+      ),
+    ).toEqual(0.08923339479248181);
+  });
+});
