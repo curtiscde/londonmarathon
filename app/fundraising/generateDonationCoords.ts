@@ -11,7 +11,10 @@ export interface GenerateDonationCoordsResponse {
   remainingRouteCoords: RouteCoord[]
 }
 
-export const generateDonationCoords = ({ remainingRouteCoords: originalRemainingRouteCoords, donationDistance }: GenerateDonationCoordsProps): GenerateDonationCoordsResponse => {
+export const generateDonationCoords = ({
+  remainingRouteCoords: originalRemainingRouteCoords,
+  donationDistance,
+}: GenerateDonationCoordsProps): GenerateDonationCoordsResponse => {
   const donationCoords: RouteCoord[] = [];
   const remainingRouteCoords = [...originalRemainingRouteCoords];
   let donationDistanceLeft = donationDistance;

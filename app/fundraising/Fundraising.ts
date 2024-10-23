@@ -9,6 +9,11 @@ interface FundraisingInfo {
   totalRaisedPercentageOfFundraisingTarget: string
 }
 
+interface BindDonationMapsProps {
+  routeCoords: RouteCoord[]
+  totalRouteDistance: number
+}
+
 export class Fundraising {
   public static donations: Donation[];
 
@@ -26,7 +31,9 @@ export class Fundraising {
       },
     } = JustGiving;
 
-    this.donations = donations.sort((a, b) => (a.donationDateTimestamp < b.donationDateTimestamp ? -1 : 1));
+    this.donations = donations.sort((a, b) => (
+      a.donationDateTimestamp < b.donationDateTimestamp ? -1 : 1
+    ));
 
     this.fundraisingInfo = {
       fundraisingTarget,
@@ -35,7 +42,7 @@ export class Fundraising {
     };
   }
 
-  static bindDonationMaps({ routeCoords, totalRouteDistance }: { routeCoords: RouteCoord[], totalRouteDistance: number }) {
+  static bindDonationMaps({ routeCoords, totalRouteDistance }: BindDonationMapsProps) {
     this.donations = generateDonationMaps({
       donations: this.donations,
       fundraisingTarget: this.fundraisingInfo.fundraisingTarget,

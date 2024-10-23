@@ -14,7 +14,10 @@ describe('generateDonationMaps', () => {
   it('returns donations with donationMap', () => {
     expect(
       generateDonationMaps({
-        donations, fundraisingTarget: 3000, totalRouteDistance: 5000, routeCoords: [{ lat: 0.5, lon: 0.5 }, { lat: 0.51, lon: 0.51 }, { lat: 0.91, lon: 0.952 }],
+        donations,
+        fundraisingTarget: 3000,
+        totalRouteDistance: 5000,
+        routeCoords: [{ lat: 0.5, lon: 0.5 }, { lat: 0.51, lon: 0.51 }, { lat: 0.91, lon: 0.952 }],
       }),
     ).toEqual([
       {

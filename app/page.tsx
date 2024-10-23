@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Map from './components/Map';
@@ -38,11 +39,17 @@ export default async function Page() {
             <div className="grid col-span-12">
               <div className="card lg:card-side bg-base-300">
                 <figure>
-                  <img src="https://placehold.co/600x400" />
+                  <Image alt="placeholder" src="https://placehold.co/600x400" width={600} height={400} />
                 </figure>
                 <div className="card-body">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus. Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt. Curabitur porta magna est, sed luctus magna pellentesque ac. Sed in nisi magna. Sed dapibus, sem pellentesque finibus sollicitudin, metus nulla sodales justo, sed gravida quam dolor quis justo. Integer vel porta lacus. Integer et sollicitudin velit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus.
+                    Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt.
+                    Curabitur porta magna est, sed luctus magna pellentesque ac.
+                    Sed in nisi magna. Sed dapibus, sem pellentesque finibus sollicitudin,
+                    metus nulla sodales justo, sed gravida quam dolor quis justo.
+                    Integer vel porta lacus. Integer et sollicitudin velit.
                   </p>
                 </div>
               </div>
@@ -100,7 +107,10 @@ export default async function Page() {
                 <div className="card-body">
 
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus. Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt. Curabitur porta magna est, sed luctus magna pellentesque ac. Sed in nisi magna.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nulla rhoncus mauris volutpat, elementum libero nec, venenatis metus.
+                    Curabitur ullamcorper purus ut libero sollicitudin, a blandit odio tincidunt.
+                    Curabitur porta magna est, sed luctus magna pellentesque ac. Sed in nisi magna.
                   </p>
 
                 </div>
@@ -108,7 +118,10 @@ export default async function Page() {
             </div>
 
             <RecentDonations donations={donations} />
-            <RecentActivities stravaActivities={stravaActivities!} stravaProfileUrl={stravaProfileUrl!} />
+            <RecentActivities
+              stravaActivities={stravaActivities!}
+              stravaProfileUrl={stravaProfileUrl!}
+            />
 
             <div className="grid col-span-12">
               <Footer />

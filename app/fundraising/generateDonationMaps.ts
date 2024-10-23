@@ -20,7 +20,11 @@ export const generateDonationMaps = ({
 
     const donationDistanceDisplay = donationDistance > 1 ? `${donationDistance.toFixed(2)}km` : `${(donationDistance * 1000).toFixed(2)}m`;
 
-    const { remainingRouteCoords: newRemainingRouteCoords, donationCoords } = generateDonationCoords({ remainingRouteCoords, donationDistance });
+    const {
+      remainingRouteCoords: newRemainingRouteCoords,
+      donationCoords,
+    } = generateDonationCoords({ remainingRouteCoords, donationDistance });
+
     remainingRouteCoords = [...newRemainingRouteCoords];
 
     return {
