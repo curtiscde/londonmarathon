@@ -7,7 +7,6 @@ import RecentActivities from './components/RecentActivities';
 import RecentDonations from './components/RecentDonations';
 import { DonationsMap } from './donationsMap';
 import { Fundraising } from './fundraising';
-import { Strava, StravaActivity } from './strava';
 
 export default async function Page() {
   await DonationsMap.getRouteCoords();
@@ -18,15 +17,6 @@ export default async function Page() {
   Fundraising.bindDonationMaps({ routeCoords, totalRouteDistance });
 
   const { fundraisingInfo, donations } = Fundraising;
-
-  let stravaActivities: StravaActivity[];
-  let stravaProfileUrl: string;
-
-  if (process.env.STRAVA_REFRESH_TOKEN != null && typeof process.env.STRAVA_REFRESH_TOKEN === 'string') {
-    await Strava.load(process.env.STRAVA_REFRESH_TOKEN);
-
-    ({ activities: stravaActivities, profileUrl: stravaProfileUrl } = Strava);
-  }
 
   return (
     <div>
@@ -118,10 +108,7 @@ export default async function Page() {
             </div>
 
             <RecentDonations donations={donations} />
-            <RecentActivities
-              stravaActivities={stravaActivities!}
-              stravaProfileUrl={stravaProfileUrl!}
-            />
+            <RecentActivities />
 
             <div className="grid col-span-12">
               <Footer />

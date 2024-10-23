@@ -1,20 +1,14 @@
-'use client';
-
 import React from 'react';
-import { StravaActivity } from '../strava';
+import { Strava } from '../strava';
 import ActivityCard from './ActivityCard';
 
-interface RecentActivitiesProps {
-  stravaActivities: StravaActivity[]
-  stravaProfileUrl: string
-}
-
-export default function RecentActivities(
-  { stravaActivities, stravaProfileUrl }: RecentActivitiesProps,
-) {
-  if (stravaActivities == null || stravaProfileUrl == null) {
+export default async function RecentActivities() {
+  if (process.env.STRAVA_REFRESH_TOKEN == null || typeof process.env.STRAVA_REFRESH_TOKEN !== 'string') {
     return null;
   }
+
+  await Strava.load(process.env.STRAVA_REFRESH_TOKEN! as string);
+  const { activities, profileUrl: stravaProfileUrl } = Strava;
 
   return (
     <>
@@ -22,7 +16,7 @@ export default function RecentActivities(
         <div className="divider">Recent Activities</div>
       </div>
 
-      {stravaActivities.map((activity) => (
+      {activities.map((activity) => (
         <div key={activity.id} className="grid col-span-12 md:col-span-4">
           <ActivityCard activity={activity} />
         </div>
